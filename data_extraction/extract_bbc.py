@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from transform_data import transform_data
 
 def extract_from_bbc():
     url = 'https://www.bbc.com'
@@ -23,7 +24,8 @@ def extract_from_bbc():
 
     return articles
 
+# Use transform_data when you print or save the output
 if __name__ == '__main__':
-    data = extract_from_bbc()
-    for article in data:
-        print(article)
+    data = extract_from_dawn()  # Or extract_from_bbc
+    transformed_data = transform_data(data)
+    print(transformed_data)
